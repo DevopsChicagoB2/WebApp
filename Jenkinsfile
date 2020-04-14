@@ -29,20 +29,6 @@ node {
     }
 
 }
-pipeline {
-     agent any
-     stages {
-         stage('Build') {
-             steps {
-                 echo 'Building...'
-             }
-             post {
-                 always {
-	             jiraSendBuildInfo site: 'devops-chicagob2.atlassian.net' , branch: 'US-1'
-                 }
-             }
-         }
-     }
- }
+
 	
     
