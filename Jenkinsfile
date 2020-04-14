@@ -28,4 +28,20 @@ node {
         server.publishBuildInfo buildInfo
     }
     }
+
+pipeline {
+     agent any
+     stages {
+         stage('Build') {
+             steps {
+                 echo 'Building...'
+             }
+             post {
+                 always {
+                     jiraSendBuildInfo branch: '', site: 'devops-chicagob2.atlassian.net'
+                 }
+             }
+         }
+     }
+ }
 	 
