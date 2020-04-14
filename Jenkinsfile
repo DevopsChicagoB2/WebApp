@@ -27,7 +27,7 @@ node {
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
     }
-    }
+
 
 pipeline {
      agent any
@@ -38,10 +38,11 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo branch: '', site: 'devops-chicagob2.atlassian.net'
+	             jiraSendBuildInfo site: 'devops-chicagob2.atlassian.net' , branch: 'US-1'
                  }
              }
          }
      }
  }
-	 
+	
+    }
