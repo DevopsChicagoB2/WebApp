@@ -28,7 +28,7 @@ node {
         server.publishBuildInfo buildInfo
     }
 
-
+}
 pipeline {
      agent any
      stages {
@@ -45,4 +45,4 @@ pipeline {
      }
  }
 	
-    }
+    
